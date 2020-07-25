@@ -1,0 +1,81 @@
+@import url(http://fonts.googleapis.com/css?family=Creepster&font-display=swap);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #01070a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scene h2 {
+    position: absolute;
+    color: transparent;
+    font-weight: 500;
+    font-size: 7em;
+    -webkit-text-stroke: 4px #fff;
+    text-transform: uppercase;
+}
+.scene .rocket {
+    position: relative;
+    animation: animate 0.2s linear infinite;
+}
+
+.scene i {
+    position: absolute;
+    top: -250px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: animateStars linear infinite;
+}
+
+.rocket::after {
+    position: relative;
+    animation: animateFuego 1.2s ease infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-2px);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+}
+
+@keyframes animateStars {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(200vh);
+    }
+}
+
+@keyframes anmateFuego {
+    0% {
+        box-shadow: 0 0 0 0 rgb(252, 107, 11);
+    }
+    80% {
+        box-shadow: 0 0 0 20px rgba(69, 39, 160, 0);
+    }
+}
+
+.scene .rocket::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 230px;
+    background: linear-gradient(#00d0ff, transparent);
+    filter: blur(20px);
+}
